@@ -1,0 +1,12 @@
+[project]
+name = "ibs-system"
+version = "0.1.0"
+description = "管院空間管理系統（軟體工程學期專案）：空間查詢、空間/物品預約借用、排課"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.0",
+    "itsdangerous>=2.2.0",
+    "python-multipart>=0.0.9",
+    "psycopg[binary]>=3.2.0",
+]

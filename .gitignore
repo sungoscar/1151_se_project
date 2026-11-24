@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# 虛擬環境
+.venv
+
+# 個人的資料庫連線設定（每個人的 PostgreSQL 密碼可能不同，不進 git）
+.env

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳號管理｜管院空間管理系統</title>
+    <link rel="stylesheet" href="/common/common.css">
+    <link rel="stylesheet" href="/common/admin_users.css">
+</head>
+<body>
+    <main class="container">
+        <h1>帳號管理</h1>
+        <div id="page-message" class="message"></div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="pending">待審核 <span id="pending-count"></span></button>
+            <button class="tab" data-tab="all">全部帳號</button>
+            <button class="tab" data-tab="create">新增帳號</button>
+        </div>
+
+        <!-- 分頁 1：待審核 -->
+        <section class="tab-panel" id="panel-pending">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>帳號</th>
+                        <th>姓名</th>
+                        <th>身分</th>
+                        <th>申請時間</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="pending-list"></tbody>
+            </table>
+        </section>
+
+        <!-- 分頁 2：全部帳號 -->
+        <section class="tab-panel hidden" id="panel-all">
+            <div class="filter-bar">
+                <label for="status-filter">狀態</label>
+                <select id="status-filter" class="input-small">
+                    <option value="">全部</option>
+                    <option value="pending">待審核</option>
+                    <option value="active">已啟用</option>
+                    <option value="rejected">已退件</option>
+                </select>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>帳號</th>
+                        <th>姓名</th>
+                        <th>身分</th>
+                        <th>狀態</th>
+                        <th>退件原因</th>
+                        <th>申請時間</th>
+                        <th>審核時間</th>
+                    </tr>
+                </thead>
+                <tbody id="all-list"></tbody>
+            </table>
+        </section>
+
+        <!-- 分頁 3：新增帳號 -->
+        <section class="tab-panel hidden" id="panel-create">
+            <div class="card create-card">
+                <p class="text-muted">管理員新增的帳號不需要審核，建立後即可登入。</p>
+                <div id="create-message" class="message"></div>
+                <form id="create-form">
+                    <div class="form-group">
+                        <label for="create-username">帳號</label>
+                        <input type="text" id="create-username" required
+                               pattern="[A-Za-z0-9]{4,20}" title="4～20 碼英文或數字">
+                        <p class="form-hint">4～20 碼英文或數字</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="create-password">密碼</label>
+                        <input type="password" id="create-password" required minlength="4" autocomplete="new-password">
+                        <p class="form-hint">至少 4 碼</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="create-name">姓名</label>
+                        <input type="text" id="create-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="create-role">身分</label>
+                        <select id="create-role" required>
+                            <option value="student">學生</option>
+                            <option value="teacher">老師</option>
+                            <option value="admin">管理員</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">建立帳號</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="/common/common.js"></script>
+    <script src="/common/admin_users.js"></script>
+</body>
+</html>

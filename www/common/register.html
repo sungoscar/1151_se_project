@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申請帳號｜管院空間管理系統</title>
+    <link rel="stylesheet" href="/common/common.css">
+    <!-- 註冊頁和登入頁版面相同，共用 login.css -->
+    <link rel="stylesheet" href="/common/login.css">
+</head>
+<body>
+    <main class="container container-narrow">
+        <section class="card">
+            <h1>申請帳號</h1>
+            <div id="register-message" class="message"></div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="username">帳號</label>
+                    <input type="text" id="username" required autocomplete="username"
+                           pattern="[A-Za-z0-9]{4,20}" title="4～20 碼英文或數字">
+                    <p class="form-hint">4～20 碼英文或數字</p>
+                </div>
+                <div class="form-group">
+                    <label for="password">密碼</label>
+                    <input type="password" id="password" required minlength="4" autocomplete="new-password">
+                    <p class="form-hint">至少 4 碼</p>
+                </div>
+                <div class="form-group">
+                    <label for="password-confirm">確認密碼</label>
+                    <input type="password" id="password-confirm" required minlength="4" autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">身分</label>
+                    <select id="role" required>
+                        <option value="">請選擇</option>
+                        <option value="student">學生</option>
+                        <option value="teacher">老師</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-full">送出申請</button>
+            </form>
+
+            <p class="text-muted switch-link">
+                已經有帳號？<a href="/common/login.html">登入</a>
+            </p>
+        </section>
+    </main>
+
+    <script src="/common/common.js"></script>
+    <script src="/common/register.js"></script>
+</body>
+</html>

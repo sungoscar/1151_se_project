@@ -1,0 +1,50 @@
+/* ==========================================================
+   www/common/admin_users.css：帳號管理頁
+   ========================================================== */
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+/* 退件時展開的原因輸入列 */
+.reject-row td {
+    background: var(--color-danger-light);
+}
+
+.reject-row:hover td {
+    background: var(--color-danger-light);
+}
+
+.reject-box {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.reject-box input {
+    flex: 1;
+}
+
+.create-card {
+    max-width: 480px;
+}
+
+#pending-count:not(:empty) {
+    display: inline-block;
+    min-width: 20px;
+    padding: 0 6px;
+    border-radius: 10px;
+    background: var(--color-danger);
+    color: var(--color-white);
+    font-size: 12px;
+    text-align: center;
+}
